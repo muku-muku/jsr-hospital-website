@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jai Sai Ram Hospital | Multi-Speciality Hospital in Gurugram</title>
+<meta name="description" content="Jai Sai Ram Hospital is a multi-speciality hospital in New Palam Vihar, Gurugram with 24x7 emergency care, pharmacy, diagnostics, specialist doctors, ICU, PICU, NICU and cashless TPA support.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#193152;
+  --ink-2:#29476f;
+  --accent:#2b7ba1;
+  --accent-2:#51a7cf;
+  --soft:#f5f0ea;
+  --soft-2:#fbf8f4;
+  --card:#ffffff;
+  --line:#e2e8f0;
+  --muted:#607089;
+  --success:#16735f;
+  --danger:#b42318;
+  --shadow:0 22px 55px rgba(25,49,82,.10);
+  --radius:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--soft-2);color:var(--ink);line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(251,248,244,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(226,232,240,.85)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;background:#fff;border-radius:999px;padding:7px 14px 7px 7px;text-decoration:none;}
+.brand img{width:46px;height:46px;object-fit:contain}
+.brand-title{font-size:14px;line-height:1.1;font-weight:400;letter-spacing:.01em;color:var(--ink);font-family:'Archivo Black',sans-serif;white-space:nowrap;}
+.brand-subtitle{font-size:8px;color:#2b7ba1;margin-top:3px;display:flex;align-items:center;gap:4px;white-space:nowrap;font-weight:600;letter-spacing:.03em;}
+.nav-links{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:650;color:var(--ink-2)}
+.nav-links a{opacity:.86}
+.nav-links a:hover{color:var(--accent);opacity:1}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.btn{border:0;border-radius:999px;padding:12px 20px;font-weight:750;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s ease;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 12px 24px rgba(43,123,161,.20)}
+.btn-primary:hover{background:#246d90;transform:translateY(-1px)}
+.btn-light{background:#e7f4f8;color:var(--accent)}
+.btn-light:hover{background:#d8edf4}
+.btn-outline{background:transparent;color:var(--accent);border:1px solid rgba(43,123,161,.35)}
+.btn-outline:hover{background:#eaf5f8}
+.hero-card .btn-outline{color:#fff;border-color:rgba(255,255,255,.24)}
+.hero-card .btn-outline:hover{background:rgba(255,255,255,.10)}
+.mobile-menu{display:none;background:transparent;border:0;font-size:28px;color:var(--ink);cursor:pointer}
+.hero{background:var(--soft);padding:58px 0 44px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:34px;align-items:center}
+.hero-card{background:var(--ink-2);color:#fff;border-radius:22px;padding:46px;box-shadow:var(--shadow)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-2);margin-bottom:16px}
+.hero-card h1{font-size:clamp(42px,6vw,72px);line-height:.98;letter-spacing:-.03em;font-weight:800;margin-bottom:22px}
+.hero-card p{font-size:18px;color:#eaf3f7;max-width:560px;margin-bottom:28px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.hero-media{position:relative}
+.hero-frame{height:520px;border-radius:22px;overflow:hidden;background:#d7e6ec;box-shadow:var(--shadow)}
+.hero-slideshow{height:100%;display:flex;transition:transform .8s ease}
+.hero-slideshow img{min-width:100%;height:100%;object-fit:cover}
+.hero-rating{position:absolute;left:24px;bottom:24px;background:rgba(255,255,255,.94);border:1px solid rgba(226,232,240,.85);border-radius:var(--radius);padding:16px 18px;box-shadow:0 12px 30px rgba(25,49,82,.12)}
+.stars{color:#f59e0b;letter-spacing:1px;font-weight:800}
+.hero-rating strong{display:block;color:var(--ink);font-size:17px}
+.hero-rating span{font-size:13px;color:var(--muted)}
+.trust-strip{background:var(--ink);color:#fff;padding:18px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.trust-item{border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:14px;background:rgba(255,255,255,.04)}
+.trust-item strong{display:block;font-size:18px}
+.trust-item span{display:block;font-size:12px;color:#c9d7e7;margin-top:2px}
+.section{padding:76px 0;scroll-margin-top:96px}
+.section.alt{background:var(--soft)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px}
+.section-label{color:var(--accent);font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:.13em;margin-bottom:8px}
+.section h2{font-size:clamp(32px,4vw,52px);line-height:1.02;letter-spacing:-.03em}
+.section-head p{max-width:460px;color:var(--muted)}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.service-card,.doctor-card,.review-card,.contact-card,.condition-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(25,49,82,.04)}
+.service-card{padding:22px;min-height:160px;transition:.2s ease;cursor:pointer}
+.service-card:hover,.condition-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(43,123,161,.35)}
+.service-icon{width:42px;height:42px;border-radius:50%;background:#e7f4f8;color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:850;margin-bottom:18px}
+.service-card h3{font-size:18px;margin-bottom:7px}
+.service-card p{font-size:13px;color:var(--muted)}
+.feature-band{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:center;border:1px solid #d7e8ef;background:#f1f8fb;color:var(--ink-2);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+.image-stack{position:relative;min-height:440px}
+.image-large{height:430px;border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+.image-large img{width:100%;height:100%;object-fit:cover}
+.image-small{position:absolute;right:20px;bottom:-20px;width:44%;border:8px solid var(--soft);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.copy p{color:var(--muted);margin:14px 0}
+.check-list{display:grid;gap:12px;margin-top:22px}
+.check{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2);font-weight:650}
+.check:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:8px;flex:0 0 auto}
+.cta-band{background:var(--ink-2);color:#fff;border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.cta-band p{color:#dce9f2;margin-top:6px}
+.diagnosis-panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.diag-toolbar{display:flex;gap:14px;align-items:center;justify-content:space-between;margin-bottom:22px}
+.search-wrap{flex:1;max-width:420px}
+.search-wrap input{width:100%;border:1px solid var(--line);border-radius:999px;padding:13px 18px;background:#fbfdfe;color:var(--ink);outline:none}
+.search-wrap input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(43,123,161,.10)}
+.alpha-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.alpha-btn{width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink-2);font-weight:800;cursor:pointer;transition:.2s ease}
+.alpha-btn:hover,.alpha-btn.active{background:var(--ink-2);border-color:var(--ink-2);color:#fff}
+.alpha-btn.disabled{opacity:.35;cursor:default}
+.diagnosis-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.condition-card{border-radius:999px;padding:13px 16px;color:var(--ink-2);font-weight:750;cursor:pointer;text-align:center}
+.doctors-carousel{position:relative;overflow:hidden;padding:6px 0 42px}
+.doctors-track-container{overflow:hidden;margin:0 44px}
+.doctors-track{display:flex;gap:18px;transition:transform .45s ease}
+.doctor-card{flex:0 0 calc(25% - 14px);padding:26px 18px;text-align:center}
+.doc-avatar{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--ink-2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:850;margin:0 auto 16px}
+.doctor-card h3{font-size:18px;margin-bottom:8px}
+.spec{display:inline-flex;background:#e7f4f8;color:var(--accent);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800}
+.qual{font-size:12px;color:var(--muted);margin-top:8px}
+.carousel-btn{position:absolute;top:42%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:var(--ink-2);color:#fff;cursor:pointer;font-size:22px;z-index:2}
+.carousel-btn.prev{left:0}.carousel-btn.next{right:0}
+.carousel-dots{position:absolute;bottom:0;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.carousel-dot{width:8px;height:8px;border-radius:50%;background:#cbd5e1;cursor:pointer}
+.carousel-dot.active{background:var(--accent)}
+.reviews-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;align-items:start}
+.rating-card{background:var(--ink-2);color:#fff;border-radius:22px;padding:32px;box-shadow:var(--shadow)}
+.rating-card .big{font-size:64px;line-height:1;font-weight:850;letter-spacing:-.04em}
+.rating-card p{color:#dce9f2;margin:10px 0 20px}
+.reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.review-card{padding:20px}
+.review-top{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.reviewer-av{width:42px;height:42px;border-radius:50%;background:#e7f4f8;color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:850}
+.reviewer-name{font-weight:800}
+.review-text{font-size:14px;color:var(--muted)}
+.google-badge{display:inline-flex;margin-top:12px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12px;color:var(--muted);font-weight:700}
+.booking-wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:24px;align-items:start}
+.booking-note{background:var(--ink-2);color:#fff;border-radius:22px;padding:30px}
+.booking-note p{color:#dce9f2;margin-top:12px}
+.booking-form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:7px;position:relative}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:13px;font-weight:800;color:var(--ink-2)}
+.form-group input,.form-group select{border:1px solid var(--line);border-radius:var(--radius);padding:12px 13px;background:#fbfdfe;color:var(--ink);outline:none}
+.form-group input:focus,.form-group select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(43,123,161,.10)}
+.submit-btn{width:100%;margin-top:18px;border:0;border-radius:999px;background:var(--accent);color:#fff;padding:14px 18px;font-weight:850;cursor:pointer}
+.form-msg{display:none;margin-top:14px;padding:12px 16px;border-radius:var(--radius);font-size:14px;text-align:center}
+.calendar{display:none;position:absolute;top:100%;left:0;z-index:20;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:14px;width:260px;margin-top:5px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-head button{background:none;border:0;color:var(--accent);font-size:20px;cursor:pointer;padding:2px 8px}
+.cal-week,.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center}
+.cal-week span{font-size:10px;color:var(--muted);font-weight:800;margin-bottom:4px}
+.faq-list{max-width:780px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:var(--radius);background:#fff;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:17px 20px;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:.25s ease;color:var(--muted);background:#fbfdfe}
+.faq-a.open{max-height:220px;padding:14px 20px 18px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card{padding:22px}
+.contact-card h3{font-size:16px;margin-bottom:8px}
+.contact-card p,.contact-card a{color:var(--muted)}
+.map-card{background:#e7f4f8;border-radius:22px;display:flex;min-height:290px;align-items:center;justify-content:center;text-align:center;padding:28px;color:var(--ink-2)}
+.footer{background:var(--ink);color:#c9d7e7;padding:46px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px}
+.footer h3,.footer h4{color:#fff;margin-bottom:10px}
+.footer a,.footer p{color:#c9d7e7;font-size:14px}
+.footer a{display:block;margin:8px 0}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:18px;text-align:center;font-size:12px;color:#9fb0c4}
+@media(max-width:1024px){
+  .hero-grid,.split,.reviews-layout,.booking-wrap{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:repeat(3,1fr)}
+  .services-grid{grid-template-columns:repeat(3,1fr)}
+  .doctor-card{flex-basis:calc(33.333% - 12px)}
+}
+@media(max-width:1100px){
+  .container{width:min(100% - 28px,1120px)}
+  .nav{height:auto;min-height:72px;align-items:flex-start;padding:12px 0;flex-wrap:wrap}
+  .brand{min-width:auto}
+  .brand-title{font-size:11px}
+  .nav-links{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:12px;padding:10px 0}
+  .nav-links.open{display:flex}
+  .nav-actions{margin-left:auto}
+  .nav-actions .btn{display:none}
+  .mobile-menu{display:block}
+}
+@media(max-width:768px){
+  .hero{padding:28px 0 36px}
+  .hero-card{padding:30px 24px}
+  .hero-card p{font-size:16px}
+  .hero-frame{height:360px}
+  .hero-rating{left:14px;right:14px;bottom:14px}
+  .trust-grid,.services-grid,.reviews-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+  .section{padding:54px 0}
+  .section-head{display:block}
+  .section-head p{margin-top:12px}
+  .diag-toolbar{display:block}
+  .search-wrap{max-width:none;margin-bottom:16px}
+  .doctors-track-container{margin:0 34px}
+  .doctor-card{flex-basis:calc(50% - 9px)}
+  .form-grid{grid-template-columns:1fr}
+  .cta-band{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hero-buttons .btn{width:100%}
+  .trust-grid{gap:8px}
+  .doctor-card{flex-basis:100%}
+  .image-stack{min-height:auto}
+  .image-large{height:300px}
+  .image-small{display:none}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="#" class="brand" aria-label="Jai Sai Ram Hospital home">
+      <img src="images/jsr-footer-logo.png" alt="JSR Logo" style="width:36px;height:36px;object-fit:contain;flex-shrink:0;">
+      <span style="display:flex;flex-direction:column;">
+        <span class="brand-title">Jai Sai Ram Hospital</span>
+        <span class="brand-subtitle">
+          <span style="flex:1;height:1.5px;background:linear-gradient(to right,transparent,#2b7ba1);display:inline-block;min-width:13px;"></span>
+          <span style="padding:0 3px;">We Care Here</span>
+          <span style="flex:1;display:inline-flex;align-items:center;min-width:13px;">
+            <span style="flex:1;height:1.5px;background:#2b7ba1;display:inline-block;"></span>
+            <svg width="20" height="10" viewBox="0 0 28 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-left:1px;">
+              <polyline points="0,7 6,7 8,2 11,12 14,1 17,10 19,7 28,7" stroke="#2b7ba1" stroke-width="1.6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#diagnose">Find a Diagnosis</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-primary" onclick="scrollToBook()">Book Appointment</button>
+      <button class="mobile-menu" onclick="toggleMenu()" aria-label="Toggle navigation">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <div class="eyebrow">24x7 Multi-Speciality Care</div>
+        <h1>Your Health,<br>Our Priority</h1>
+        <p>Compassionate hospital care in New Palam Vihar, Gurugram with specialist doctors, emergency services, pharmacy, diagnostics and cashless TPA support.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-light" onclick="scrollToBook()">Book Appointment</button>
+          <button class="btn btn-outline" onclick="window.open('tel:09870312515')">Call Emergency</button>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-frame">
+          <div class="hero-slideshow" id="heroSlideshow">
+            <img src="images/IMG_2260.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2266.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2267.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2268.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2270.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2272.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2274.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2277.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2285.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2286.jpeg" alt="Jai Sai Ram Hospital facility">
+            <img src="images/IMG_2290.jpeg" alt="Jai Sai Ram Hospital facility">
+          </div>
+        </div>
+        <div class="hero-rating">
+          <div class="stars">★★★★★</div>
+          <strong>4.9-star Google rating</strong>
+          <span>Trusted by 200+ Google reviewers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item"><strong>NABH</strong><span>Certified care</span></div>
+      <div class="trust-item"><strong>75</strong><span>Bedded hospital</span></div>
+      <div class="trust-item"><strong>21+</strong><span>Specialist doctors</span></div>
+      <div class="trust-item"><strong>24x7</strong><span>Emergency care</span></div>
+      <div class="trust-item"><strong>35+</strong><span>Cashless TPAs</span></div>
+      <div class="trust-item"><strong>Under one roof</strong><span>Pharmacy and diagnostics</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Departments</div>
+          <h2>Our Medical Services</h2>
+        </div>
+        <p>Comprehensive healthcare solutions across major specialities, supported by emergency, ICU, PICU, NICU, pharmacy and diagnostic facilities.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">01</div><h3>Cardiology</h3><p>Heart consultation and cardiac care support.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">02</div><h3>Orthopedics</h3><p>Bone, joint, spine and fracture care.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">03</div><h3>Pediatrics</h3><p>Child health, vaccination and pediatric care.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">04</div><h3>General Medicine</h3><p>OPD care for fever, infections and chronic illness.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">05</div><h3>General Surgery</h3><p>Surgical consultation and operation theatre support.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">06</div><h3>Ophthalmology</h3><p>Eye consultation and cataract care.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">07</div><h3>ENT</h3><p>Ear, nose, throat and sinus care.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">08</div><h3>Gastroenterology</h3><p>Digestive, liver and abdominal care.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">09</div><h3>Gynaecology & OBS</h3><p>Women’s health and pregnancy care.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">10</div><h3>Physiotherapy</h3><p>Rehabilitation and pain management support.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">11</div><h3>Anesthesia</h3><p>Experienced anesthesia support for procedures.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">12</div><h3>Radiology</h3><p>X-Ray and ultrasound diagnostic support.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">13</div><h3>Pathology</h3><p>Lab testing and home blood sample collection.</p></div>
+        <div class="service-card" onclick="scrollToBook()"><div class="service-icon">14</div><h3>Dermatology</h3><p>Skin and cosmetology consultation.</p></div>
+      </div>
+      <div class="feature-band">
+        <span class="pill">ICU</span><span class="pill">PICU</span><span class="pill">NICU</span><span class="pill">Operation Theatre</span><span class="pill">X-Ray</span><span class="pill">Ultrasound</span><span class="pill">24x7 Pharmacy</span><span class="pill">Ambulance Service</span><span class="pill">Free Home Blood Sample Collection</span><span class="pill">All Types of Vaccination</span><span class="pill">ECG</span><span class="pill">TMT</span><span class="pill">Palliative Care</span><span class="pill">Day Care for Seniors</span><span class="pill">Blood Transfusion</span><span class="pill">Physiotherapy</span><span class="pill">Rehabilitation</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container cta-band">
+      <div>
+        <h2>Emergency care is available 24x7</h2>
+        <p>For urgent help, call the hospital directly. Ambulance and emergency support are available round the clock.</p>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn btn-light" onclick="window.open('tel:09870312515')">Call 9870312515</button>
+        <button class="btn btn-outline" onclick="scrollToBook()">Book OPD Visit</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="diagnose">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Conditions We Treat</div>
+          <h2>Find a Diagnosis</h2>
+        </div>
+        <p>Browse conditions we treat, by alphabet. Select any condition to start an appointment request.</p>
+      </div>
+      <div class="diagnosis-panel">
+        <div class="diag-toolbar">
+          <div class="search-wrap">
+            <input id="diagnosisSearch" type="search" placeholder="Search conditions..." oninput="searchDiagnosis()">
+          </div>
+          <button class="btn btn-primary" onclick="scrollToBook()">Book Consultation</button>
+        </div>
+        <div class="alpha-bar" id="alphaBar"></div>
+        <div class="diagnosis-grid" id="diagGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="doctors">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Doctor Panel</div>
+          <h2>Our Specialist Doctors</h2>
+        </div>
+        <p>Experienced professionals across medicine, surgery, pediatrics, gynecology, radiology, pathology and more.</p>
+      </div>
+      <div class="doctors-carousel" id="doctorsCarousel">
+        <button class="carousel-btn prev" id="docPrev" aria-label="Previous doctors">‹</button>
+        <button class="carousel-btn next" id="docNext" aria-label="Next doctors">›</button>
+        <div class="doctors-track-container">
+          <div class="doctors-track" id="docTrack">
+            <div class="doctor-card"><div class="doc-avatar">AM</div><h3>Dr. Ajay Muku</h3><div class="spec">Medical Director</div><div class="qual">MD PHY.</div></div>
+            <div class="doctor-card"><div class="doc-avatar">AK</div><h3>Dr. Aslam Khan</h3><div class="spec">Cardiologist</div><div class="qual">MBBS, MD · Senior Cardiologist</div></div>
+            <div class="doctor-card"><div class="doc-avatar">SS</div><h3>Dr. S.B. Shrivastava</h3><div class="spec">Dermatology</div><div class="qual">Consultant Dermatologist</div></div>
+            <div class="doctor-card"><div class="doc-avatar">NA</div><h3>Dr. Nehal Ahmad</h3><div class="spec">Physician</div><div class="qual">MD PHY.</div></div>
+            <div class="doctor-card"><div class="doc-avatar">SW</div><h3>Dr. Sumit Wadhwa</h3><div class="spec">Physician</div><div class="qual">MBBS DNB DTCD</div></div>
+            <div class="doctor-card"><div class="doc-avatar">SB</div><h3>Dr. Siddharth Baruah</h3><div class="spec">Anesthesia</div><div class="qual">MBBS DA</div></div>
+            <div class="doctor-card"><div class="doc-avatar">BC</div><h3>Dr. Bhupendra Chouhan</h3><div class="spec">Orthopedics</div><div class="qual">MBBS MS</div></div>
+            <div class="doctor-card"><div class="doc-avatar">PK</div><h3>Dr. P. Kumar</h3><div class="spec">Pediatrics</div><div class="qual">MBBS MD</div></div>
+            <div class="doctor-card"><div class="doc-avatar">AV</div><h3>Dr. Avaneesh</h3><div class="spec">Surgery</div><div class="qual">MBBS MS</div></div>
+            <div class="doctor-card"><div class="doc-avatar">MK</div><h3>Dr. Mukesh K. Saini</h3><div class="spec">Eye</div><div class="qual">MBBS MS</div></div>
+            <div class="doctor-card"><div class="doc-avatar">SJ</div><h3>Dr. S. Jolly</h3><div class="spec">Lap Surgeon</div><div class="qual">MBBS MS</div></div>
+            <div class="doctor-card"><div class="doc-avatar">TF</div><h3>Dr. Tanvir Firdous</h3><div class="spec">Physician</div><div class="qual">MBBS MD</div></div>
+            <div class="doctor-card"><div class="doc-avatar">VK</div><h3>Dr. V.K. Kapur</h3><div class="spec">Pediatrics</div><div class="qual">MBBS DCH MHA</div></div>
+            <div class="doctor-card"><div class="doc-avatar">AS</div><h3>Dr. Anil Sahoo</h3><div class="spec">Cardiologist</div><div class="qual">MD PGDCC</div></div>
+            <div class="doctor-card"><div class="doc-avatar">NA</div><h3>Dr. Nidhi Aggarwal</h3><div class="spec">Radiologist</div><div class="qual">MBBS MD</div></div>
+            <div class="doctor-card"><div class="doc-avatar">MB</div><h3>Dr. M.L. Bhat</h3><div class="spec">Pathologist</div><div class="qual">MBBS MD</div></div>
+            <div class="doctor-card"><div class="doc-avatar">RB</div><h3>Dr. Rajesh Bawari</h3><div class="spec">Orthopedics</div><div class="qual">MBBS MS</div></div>
+          </div>
+        </div>
+        <div class="carousel-dots" id="docDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Patient Trust</div>
+          <h2>What Our Patients Say</h2>
+        </div>
+        <p>Real patient experiences, highlighted with a 4.9-star rating and 200+ Google reviews.</p>
+      </div>
+      <div class="reviews-layout">
+        <div class="rating-card">
+          <div class="big">4.9</div>
+          <div class="stars">★★★★★</div>
+          <p>200+ Google reviews from patients and families who trusted Jai Sai Ram Hospital for care.</p>
+          <a class="btn btn-light" target="_blank" href="https://www.google.com/search?q=Jai+Sai+Ram+Hospital+Reviews">See All Google Reviews</a>
+        </div>
+        <div class="reviews-grid" id="reviewsGrid">
+          <!-- reviews injected by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="about">
+    <div class="container split">
+      <div class="image-stack">
+        <div class="image-large" style="overflow:hidden;position:relative;">
+          <div id="aboutSlideshow" style="display:flex;height:100%;transition:transform .8s ease;">
+            <img src="images/IMG_2293.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+            <img src="images/IMG_2294.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+            <img src="images/IMG_2296.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+            <img src="images/IMG_2301.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+            <img src="images/IMG_2304.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+            <img src="images/IMG_2310.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+            <img src="images/IMG_2315.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+            <img src="images/IMG_2321.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+            <img src="images/IMG_2332.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+            <img src="images/IMG_2335.jpeg" alt="JSR Hospital" style="min-width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+        <div class="image-small"><img src="images/operation.jpeg" alt="Hospital team"></div>
+      </div>
+      <div class="copy">
+        <div class="section-label">About JSR</div>
+        <h2>About Jai Sai Ram Hospital</h2>
+        <p>Jai Sai Ram Hospital is a 75-bedded multi-speciality facility in New Palam Vihar, Gurugram. With 21+ specialist doctors, we combine advanced medical technology with a deeply personal touch.</p>
+        <p>Our caring staff is dedicated to patient comfort, providing complete healthcare under one roof from emergency recovery to home diagnostics.</p>
+        <div class="check-list">
+          <div class="check">Round-the-clock emergency, ambulance, ICU, PICU and NICU services.</div>
+          <div class="check">Friendly, respectful and compassionate communication.</div>
+          <div class="check">OPD across all specialities, home blood collection and 35+ cashless TPA partners.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="book">
+    <div class="container booking-wrap">
+      <div class="booking-note">
+        <div class="section-label">Appointments</div>
+        <h2>Book an Appointment</h2>
+        <p>Fill in your details and our team will confirm your slot. You can also call us directly for OPD or emergency needs.</p>
+        <p>
+          <a href="tel:01244462995" style="color:#fff;text-decoration:none;font-weight:800;">0124-4462995</a><br>
+          <a href="tel:09870312515" style="color:#fff;text-decoration:none;font-weight:800;">9870312515</a> / <a href="tel:09870312514" style="color:#fff;text-decoration:none;font-weight:800;">9870312514</a>
+        </p>
+      </div>
+      <div class="booking-form">
+        <div class="form-grid">
+          <div class="form-group"><label for="f_name">Full Name</label><input type="text" id="f_name" placeholder="Your name"></div>
+          <div class="form-group"><label for="f_phone">Phone Number</label><input type="tel" id="f_phone" placeholder="+91 XXXXX XXXXX"></div>
+          <div class="form-group"><label for="f_dept">Department</label><select id="f_dept"><option>Select Department</option><option>Cardiology</option><option>Orthopedics</option><option>Pediatrics</option><option>General Medicine</option><option>General Surgery</option><option>ENT</option><option>Gynaecology & OBS</option><option>Ophthalmology</option><option>Nephrology</option><option>Gastroenterology</option><option>Physiotherapy</option><option>Dermatology</option><option>Radiology</option><option>Pathology</option></select></div>
+          <div class="form-group"><label for="f_date">Preferred Date</label><input type="text" id="f_date" placeholder="Select a date" readonly onclick="toggleCal()"><div id="jsrCal" class="calendar"><div class="cal-head"><button type="button" onclick="changeMonth(-1)">‹</button><span id="calMonthLabel"></span><button type="button" onclick="changeMonth(1)">›</button></div><div class="cal-week"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div><div class="cal-days" id="calDays"></div></div></div>
+          <div class="form-group full"><label for="f_desc">Brief Description (optional)</label><input type="text" id="f_desc" placeholder="Briefly describe your concern"></div>
+        </div>
+        <button class="submit-btn" id="submitBtn" onclick="submitAppointment()">Confirm Appointment</button>
+        <div id="formMsg" class="form-msg"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-label">FAQ</div><h2>Frequently Asked Questions</h2></div>
+        <p>Quick answers to common questions about emergency care, insurance, pharmacy, diagnostics and appointment booking.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does JSR Hospital have 24x7 emergency services? <span>+</span></div><div class="faq-a">Yes, we provide round-the-clock emergency care with ambulance services available at all times. Call 9870312515 for emergencies.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which insurance providers are accepted? <span>+</span></div><div class="faq-a">We offer cashless TPA services with 35+ insurance providers including Bajaj Allianz, Aditya Birla Health, IFFCO Tokio, Kotak General, Tata AIG, New India, United India, Oriental, National Insurance, and all leading TPAs.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a pharmacy inside the hospital? <span>+</span></div><div class="faq-a">Yes, we have a 24x7 pharmacy inside the hospital premises for your convenience.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you offer home blood sample collection? <span>+</span></div><div class="faq-a">Yes, we offer free blood sample collection from your home. Please call us to schedule a pickup.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I book an appointment? <span>+</span></div><div class="faq-a">You can book online using the form above, or call us at 0124-4462995 or 9870312515. Walk-ins are also welcome for OPD.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-label">Contact</div><h2>Find Us</h2></div>
+        <p>We are located at T-262, Opp. Church, Sec-109, 40 Feet Road, New Palam Vihar, Phase-2, Gurugram.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card"><h3>Address</h3><p>T-262, Opp. Church, Sec-109<br>40 Feet Road, New Palam Vihar<br>Phase-2, Gurugram</p></div>
+        <div class="contact-card"><h3>Phone</h3>
+          <p><a href="tel:01244462995">0124-4462995</a></p>
+          <p><a href="tel:09870312515">9870312515</a> / <a href="tel:09870312514">9870312514</a></p>
+        </div>
+        <div class="contact-card"><h3>Email</h3><p><a href="mailto:jaisairamhospital2016@gmail.com">jaisairamhospital2016@gmail.com</a></p></div>
+        <div class="contact-card"><h3>Hours</h3><p>Emergency: 24x7<br>OPD: Mon-Sat, 9am-7pm</p></div>
+      </div>
+      <div class="map-card" style="margin-top:20px">
+        <div>
+          <h3>New Palam Vihar, Phase-2, Gurugram</h3>
+          <p style="margin:8px 0 18px;color:var(--muted)">Open directions in Google Maps.</p>
+          <a class="btn btn-primary" target="_blank" href="https://maps.google.com/?q=Jai+Sai+Ram+Hospital+Gurugram">Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+          <img src="images/jsr-footer-logo.png" alt="JSR Logo" style="width:62px;height:62px;object-fit:contain;flex-shrink:0;">
+          <h3 style="margin-bottom:0;">Jai Sai Ram Hospital</h3>
+        </div>
+        <p><em>We Care Here</em></p>
+        <br>
+        <p>A 75-bedded multi-speciality hospital in Gurugram dedicated to compassionate, quality healthcare for every patient.</p>
+      </div>
+      <div><h4>Quick Links</h4><a href="#services">Services</a><a href="#diagnose">Find a Diagnosis</a><a href="#doctors">Doctors</a><a href="#reviews">Reviews</a><a href="#book">Book Appointment</a></div>
+      <div><h4>Contact</h4><p>T-262, Sec-109, New Palam Vihar<br>Phase-2, Gurugram</p><p>0124-4462995</p><p>9870312515 / 14</p><p>jaisairamhospital2016@gmail.com</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 Jai Sai Ram Hospital. All rights reserved. | We Care Here</div>
+  </div>
+</footer>
+
+<script>
+function scrollToBook(){document.getElementById('book').scrollIntoView({behavior:'smooth'})}
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(function(link){link.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open')})});
+
+const diagnosisData={A:['Abdominal Pain','Appendicitis','Asthma','Anemia','Arthritis'],B:['Back Pain','Blood Pressure','Bronchitis','Burns'],C:['Cardiac Arrest','Cataract','Chest Pain','Conjunctivitis','Cough & Cold'],D:['Dengue','Diabetes','Diarrhea','Dizziness','Dyslexia'],E:['Ear Infection','Eczema','Eye Disorders'],F:['Fever','Fracture','Frozen Shoulder'],G:['Gallstones','Gastritis','GERD','Gynecological Disorders'],H:['Headache','Heart Disease','Hernia','Hypertension'],I:['Infections','Infertility','Inflammation'],J:['Jaundice','Joint Pain'],K:['Kidney Stones','Knee Pain'],L:['Liver Disorders','Lung Infections'],M:['Malaria','Menstrual Disorders','Migraine'],N:['Nausea','Nephritis','Nerve Pain'],O:['Obesity','Orthopedic Injuries'],P:['Pediatric Care','Pneumonia','Pregnancy Care'],R:['Renal Failure','Respiratory Issues','Rashes'],S:['Sinusitis','Skin Disorders','Spine Problems','Stomach Issues'],T:['Thyroid','Tonsillitis','Trauma'],U:['Urinary Infections','Uterine Disorders'],V:['Varicose Veins','Vertigo','Viral Fever'],W:['Weakness','Wound Care']};
+const alphaBar=document.getElementById('alphaBar'),diagGrid=document.getElementById('diagGrid'),letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+function renderConditions(list){diagGrid.innerHTML=list.map(d=>`<button class="condition-card" onclick="scrollToBook()">${d}</button>`).join('')||'<p style="color:var(--muted)">No conditions found.</p>'}
+letters.forEach(l=>{const btn=document.createElement('button');btn.className='alpha-btn'+(diagnosisData[l]?'':' disabled');btn.textContent=l;if(diagnosisData[l])btn.onclick=()=>{document.getElementById('diagnosisSearch').value='';document.querySelectorAll('.alpha-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderConditions(diagnosisData[l])};alphaBar.appendChild(btn)});
+function searchDiagnosis(){const term=document.getElementById('diagnosisSearch').value.toLowerCase().trim();document.querySelectorAll('.alpha-btn').forEach(b=>b.classList.remove('active'));if(!term){alphaBar.querySelector('.alpha-btn').click();return}renderConditions(Object.values(diagnosisData).flat().filter(d=>d.toLowerCase().includes(term)))}
+alphaBar.querySelector('.alpha-btn').click();
+
+function toggleFaq(el){const ans=el.nextElementSibling,span=el.querySelector('span'),open=ans.classList.contains('open');document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));document.querySelectorAll('.faq-q span').forEach(s=>s.textContent='+');if(!open){ans.classList.add('open');span.textContent='−'}}
+
+const docTrack=document.getElementById('docTrack'),docPrev=document.getElementById('docPrev'),docNext=document.getElementById('docNext'),docDotsContainer=document.getElementById('docDots'),doctorCards=document.querySelectorAll('.doctor-card'),carousel=document.getElementById('doctorsCarousel');let docIndex=0,cardsToShow=4,autoSlideInterval;
+function updateCardsToShow(){const width=window.innerWidth;if(width>1024)cardsToShow=4;else if(width>768)cardsToShow=3;else if(width>480)cardsToShow=2;else cardsToShow=1;createDots();goToDocSlide(0)}
+function createDots(){docDotsContainer.innerHTML='';const dotCount=Math.ceil(doctorCards.length/cardsToShow);for(let i=0;i<dotCount;i++){const dot=document.createElement('div');dot.className='carousel-dot'+(i===0?' active':'');dot.onclick=()=>goToDocSlide(i*cardsToShow);docDotsContainer.appendChild(dot)}}
+function updateDots(){const dots=document.querySelectorAll('.carousel-dot'),activeDotIndex=Math.floor(docIndex/cardsToShow);dots.forEach((dot,i)=>dot.classList.toggle('active',i===activeDotIndex))}
+function goToDocSlide(index){const maxIndex=doctorCards.length-cardsToShow;docIndex=Math.max(0,Math.min(index,maxIndex));const cardWidth=doctorCards[0].offsetWidth+18;docTrack.style.transform=`translateX(-${docIndex*cardWidth}px)`;updateDots()}
+function nextDocSlide(){const maxIndex=doctorCards.length-cardsToShow;if(docIndex>=maxIndex)goToDocSlide(0);else goToDocSlide(docIndex+cardsToShow>maxIndex?maxIndex:docIndex+cardsToShow)}
+function prevDocSlide(){if(docIndex<=0)goToDocSlide(doctorCards.length-cardsToShow);else goToDocSlide(docIndex-cardsToShow<0?0:docIndex-cardsToShow)}
+function startAutoSlide(){stopAutoSlide();autoSlideInterval=setInterval(nextDocSlide,4200)}function stopAutoSlide(){clearInterval(autoSlideInterval)}
+docNext.onclick=()=>{nextDocSlide();startAutoSlide()};docPrev.onclick=()=>{prevDocSlide();startAutoSlide()};carousel.onmouseenter=stopAutoSlide;carousel.onmouseleave=startAutoSlide;window.addEventListener('resize',updateCardsToShow);updateCardsToShow();startAutoSlide();
+
+(function(){const heroSlide=document.getElementById('heroSlideshow');if(!heroSlide)return;const heroImgs=heroSlide.querySelectorAll('img');let heroIdx=0;setInterval(()=>{heroIdx=(heroIdx+1)%heroImgs.length;heroSlide.style.transform='translateX(-'+heroIdx*100+'%)'},3400)})();
+
+var calDate=new Date(),calSelectedRaw='',calOpen=false;
+function toggleCal(){var cal=document.getElementById('jsrCal');calOpen=!calOpen;cal.style.display=calOpen?'block':'none';if(calOpen)renderCal()}
+function changeMonth(dir){calDate.setMonth(calDate.getMonth()+dir);renderCal()}
+function renderCal(){var months=['January','February','March','April','May','June','July','August','September','October','November','December'];document.getElementById('calMonthLabel').textContent=months[calDate.getMonth()]+' '+calDate.getFullYear();var grid=document.getElementById('calDays');grid.innerHTML='';var today=new Date();today.setHours(0,0,0,0);var first=new Date(calDate.getFullYear(),calDate.getMonth(),1).getDay();var days=new Date(calDate.getFullYear(),calDate.getMonth()+1,0).getDate();for(var i=0;i<first;i++)grid.appendChild(document.createElement('span'));for(var d=1;d<=days;d++){var cell=document.createElement('button');cell.type='button';cell.textContent=d;var thisDate=new Date(calDate.getFullYear(),calDate.getMonth(),d),isPast=thisDate<today,isSelected=calSelectedRaw===thisDate.toISOString().split('T')[0];cell.style.cssText='width:32px;height:32px;border:none;border-radius:50%;cursor:'+(isPast?'default':'pointer')+';font-size:12px;background:'+(isSelected?'var(--accent)':'transparent')+';color:'+(isSelected?'#fff':(isPast?'#cbd5e0':'var(--ink)'))+';font-weight:'+(isSelected?'800':'500')+';';if(!isPast){(function(day,dateObj){cell.onmouseover=function(){if(!isSelected)this.style.background='#e7f4f8'};cell.onmouseout=function(){if(!isSelected)this.style.background='transparent'};cell.onclick=function(){calSelectedRaw=dateObj.toISOString().split('T')[0];var months2=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];document.getElementById('f_date').value=day+' '+months2[dateObj.getMonth()]+' '+dateObj.getFullYear();document.getElementById('jsrCal').style.display='none';calOpen=false;renderCal()}})(d,thisDate)}grid.appendChild(cell)}}
+document.addEventListener('click',function(e){var cal=document.getElementById('jsrCal'),inp=document.getElementById('f_date');if(calOpen&&cal&&!cal.contains(e.target)&&e.target!==inp){cal.style.display='none';calOpen=false}});
+function resetForm(){document.getElementById('f_name').value='';document.getElementById('f_phone').value='';document.getElementById('f_dept').value='Select Department';document.getElementById('f_date').value='';calSelectedRaw='';document.getElementById('f_desc').value='';var msg=document.getElementById('formMsg');msg.style.display='none';var btn=document.getElementById('submitBtn');btn.disabled=false;btn.textContent='Confirm Appointment';btn.style.background=''}
+var formHasError=false;
+function submitAppointment(){var btn=document.getElementById('submitBtn'),msg=document.getElementById('formMsg');if(formHasError){resetForm();formHasError=false;return}var name=document.getElementById('f_name').value.trim(),phone=document.getElementById('f_phone').value.trim(),dept=document.getElementById('f_dept').value,date=calSelectedRaw,desc=document.getElementById('f_desc').value.trim();if(!name||!phone||dept==='Select Department'||!date){msg.style.display='block';msg.style.background='#fff5f5';msg.style.color='var(--danger)';msg.style.border='1px solid #fecaca';msg.textContent='Please fill in all required fields. Click this button again to clear and retry.';btn.textContent='Clear & Try Again';btn.style.background='var(--danger)';formHasError=true;return}btn.disabled=true;btn.textContent='Sending...';msg.style.display='none';var payload={name:name,phone:phone,department:dept,date:date,description:desc};fetch('https://script.google.com/macros/s/AKfycbxQqUpocFtiEgw1lbslV_RoEZ-aj-0Cq-gc_9y_GncruKy_xkxrH3tEPE6pBz2pWrY2/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(function(){btn.textContent='Appointment Request Sent';btn.style.background='var(--success)';msg.style.display='block';msg.style.background='#f0fdf4';msg.style.color='#166534';msg.style.border='1px solid #bbf7d0';msg.textContent='Thank you, '+name+'! We will call you at '+phone+' to confirm your slot.';document.getElementById('f_name').value='';document.getElementById('f_phone').value='';document.getElementById('f_dept').value='Select Department';document.getElementById('f_date').value='';calSelectedRaw='';document.getElementById('f_desc').value='';setTimeout(function(){btn.disabled=false;btn.textContent='Confirm Appointment';btn.style.background='';msg.style.display='none'},6000)}).catch(function(){btn.disabled=false;btn.textContent='Confirm Appointment';msg.style.display='block';msg.style.background='#fff5f5';msg.style.color='var(--danger)';msg.style.border='1px solid #fecaca';msg.textContent='Something went wrong. Please call us directly at 0124-4462995.'})}
+// --- REVIEW ROTATION (random 4 shown on each page load) ---
+(function(){
+  var allReviews=[
+    {initials:'RS',name:'Rohit Sharma',stars:'★★★★★',text:'The doctors and staff at JSR Hospital are incredibly caring. I was attended to immediately during my emergency visit.'},
+    {initials:'PG',name:'Priya Gupta',stars:'★★★★★',text:'Excellent facilities and very experienced specialists. The team was wonderful throughout my visit.'},
+    {initials:'AM',name:'Arun Mehta',stars:'★★★★★',text:'My father\'s surgery was handled with great care and professionalism. The cashless process was smooth.'},
+    {initials:'SK',name:'Sunita Kaur',stars:'★★★★☆',text:'Clean, well-maintained hospital with round-the-clock pharmacy and emergency services.'},
+    {initials:'VK',name:'Vivek Kumar',stars:'★★★★★',text:'Very professional staff. The emergency team responded quickly and handled everything with confidence.'},
+    {initials:'NB',name:'Neha Bhatnagar',stars:'★★★★★',text:'I appreciated how transparent they were about treatment options. Doctors are highly knowledgeable.'},
+    {initials:'RV',name:'Ramesh Verma',stars:'★★★★★',text:'The OPD experience was smooth and the wait time was minimal. Highly recommend JSR for general care.'},
+    {initials:'AJ',name:'Aisha Joshi',stars:'★★★★★',text:'Had a great experience during my delivery. The nursing staff was attentive and supportive throughout.'},
+    {initials:'MS',name:'Mohan Singh',stars:'★★★★☆',text:'Excellent ICU facilities. My mother received the best care during her stay. Thank you JSR Hospital.'},
+    {initials:'DT',name:'Deepa Tiwari',stars:'★★★★★',text:'The diagnostic services were fast and accurate. Really appreciate the free home blood collection too.'},
+    {initials:'PK',name:'Pankaj Kapoor',stars:'★★★★★',text:'All specialists available under one roof. Saved so much time and stress. Wonderful hospital.'},
+    {initials:'SA',name:'Shirin Ansari',stars:'★★★★★',text:'Staff treated us with so much kindness. The hospital feels clean and safe. Will always come here.'}
+  ];
+  function shuffle(arr){for(var i=arr.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=arr[i];arr[i]=arr[j];arr[j]=tmp;}return arr}
+  var picked=shuffle(allReviews.slice()).slice(0,4);
+  var grid=document.getElementById('reviewsGrid');
+  if(!grid)return;
+  grid.innerHTML=picked.map(function(r){
+    return '<div class="review-card"><div class="review-top"><div class="reviewer-av">'+r.initials+'</div><div><div class="reviewer-name">'+r.name+'</div><div class="stars">'+r.stars+'</div></div></div><p class="review-text">"'+r.text+'"</p><div class="google-badge">Google Review</div></div>';
+  }).join('');
+})();
+// --- ABOUT SLIDESHOW ---
+(function(){
+  var slide=document.getElementById('aboutSlideshow');
+  if(!slide)return;
+  var imgs=slide.querySelectorAll('img');
+  var idx=0;
+  setInterval(function(){
+    idx=(idx+1)%imgs.length;
+    slide.style.transform='translateX(-'+idx*100+'%)';
+  },3600);
+})();
+</script>
+</body>
+</html>
